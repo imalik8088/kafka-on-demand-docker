@@ -1,0 +1,32 @@
+version: "2"
+
+services:
+  schema-registry-ui:
+    image: landoop/schema-registry-ui:${LANDOOP_VERSION}
+    container_name: schema_registry_ui_kodd
+    ports:
+    - "8001:8000"
+    environment:
+      SCHEMAREGISTRY_URL: "http://schema-registry:8081"
+      PROXY: "true"
+      
+
+  rest-proxy-ui:
+    image: landoop/kafka-topics-ui:${LANDOOP_VERSION}
+    container_name: rest_proxy_ui_kodd
+    ports:
+    - "8002:8000"
+    environment:
+      KAFKA_REST_PROXY_URL: "http://rest-proxy:8082"
+      PROXY: "true"
+      
+
+  kafka-connect-ui:
+    image: landoop/kafka-connect-ui:${LANDOOP_VERSION}
+    container_name: kafka_connect_ui_kodd
+    ports:
+    - "8003:8000"
+    environment:
+      CONNECT_URL: "http://kafka-connect:8083"
+      PROXY: "true"
+      
