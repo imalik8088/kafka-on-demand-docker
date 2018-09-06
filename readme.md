@@ -2,8 +2,7 @@
 
 ## Prerequisite
 
-    * docker
-    * docker-compose version at lease 1.5
+ * docker-compose version > 1.5
 
 ## Getting started
 
